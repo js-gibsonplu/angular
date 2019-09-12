@@ -5,9 +5,10 @@ import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
+import { SuccessAlertComponent } from './success-alert/success-alert.component';
 
 @NgModule({
-  declarations: [AppComponent, ServerComponent, NavBarComponent, WarningAlertComponent],
+  declarations: [AppComponent, ServerComponent, NavBarComponent, WarningAlertComponent, SuccessAlertComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]

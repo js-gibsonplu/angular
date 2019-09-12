@@ -1,5 +1,6 @@
 <app-nav-bar></app-nav-bar>
-<hr>
+<hr />
 <app-server></app-server>
-<input type="text" [(ngModel)]="name" />
-{{ name }}
+<label for="ng-name">Name:</label>
+<input type="text" [(ngModel)]="name" id="ng-name" />
+<p>Output: {{ name }}</p>
