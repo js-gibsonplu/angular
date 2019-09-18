@@ -9,6 +9,7 @@ export class ServerComponent {
   status = 'online';
   newInstance = true;
   moreText = 'Show even more!';
+  text = '';
 
   constructor() {
     setTimeout(()=> {
@@ -19,5 +20,9 @@ export class ServerComponent {
   onMoreTextClick() {
     console.log('more text button clicked')
     this.moreText += ' YES MOAR!!!!!!!!!!!!'
+  }
+
+  inputText(event: any) {
+    this.text = event;
   }
 }
