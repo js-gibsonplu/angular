@@ -1,11 +1,4 @@
-<h1>Angular Title Component</h1>
-<p>Server ID: {{ serverID }}</p>
-<p>Server Status: {{ status }}</p>
-<button class="btn btn-primary" [disabled]="!newInstance">New Instance</button>
-<p>{{ newInstance }}</p>
-
-<button class="btn btn-primary" (click)="onMoreTextClick()">More Text</button>
-<p>{{ moreText }}</p>
-
-<input (input)="inputText($event.target.value)" type="text" />
-<p>{{text}}</p>
+<label for='unInput'>Username: </label>
+<input type="text" placeholder="Username" id='unInput' [(ngModel)]='username'>
+<p>{{username}}</p>
+<button [disabled]='username !== ""' class='bnt btn-primary'>Click</button>
