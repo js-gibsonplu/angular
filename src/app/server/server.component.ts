@@ -8,14 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class ServerComponent implements OnInit {
   username = '';
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit(): void {
     console.log(this.username);
   }
 
-  onResetUN () {
-    this.username = "";
+  onResetUN() {
+    this.username = '';
+  }
+
+  getStatus() {
+    return this.username === 'bacon' ? 'brown' : '';
   }
 }

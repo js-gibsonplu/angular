@@ -1,4 +1,8 @@
-<label for='unInput'>Username: </label>
-<input type="text" placeholder="Username" id='unInput' [(ngModel)]='username'>
-<p>{{username}}</p>
-<button [disabled]='username == ""' class='bnt btn-primary' (click)="onResetUN()">Click</button>
+<section class="container">
+  <label for="unInput">Username: </label>
+  <input type="text" placeholder="Username" id="unInput" [(ngModel)]="username" />
+  <p>This is the username: {{ username }}</p>
+  <p *ngIf="username == 'bacon'; else noBacon" [ngStyle]='{backgroundColor: getStatus()}'>Secret paragraph!</p>
+  <ng-template #noBacon>Not the correct password</ng-template>
+  <button [disabled]="username == ''" class="bnt btn-primary" (click)="onResetUN()">Click</button>
+</section>
