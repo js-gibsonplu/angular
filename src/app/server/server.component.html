@@ -1,4 +1,4 @@
 <label for='unInput'>Username: </label>
 <input type="text" placeholder="Username" id='unInput' [(ngModel)]='username'>
 <p>{{username}}</p>
-<button [disabled]='username !== ""' class='bnt btn-primary'>Click</button>
+<button [disabled]='username == ""' class='bnt btn-primary' (click)="onResetUN()">Click</button>
