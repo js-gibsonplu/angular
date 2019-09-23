@@ -1,8 +1,23 @@
-<section class="container">
+<section class="container-fluid">
   <label for="unInput">Username: </label>
   <input type="text" placeholder="Username" id="unInput" [(ngModel)]="username" />
   <p>This is the username: {{ username }}</p>
-  <p *ngIf="username == 'bacon'; else noBacon" [ngStyle]='{backgroundColor: getStatus()}'>Secret paragraph!</p>
-  <ng-template #noBacon>Not the correct password</ng-template>
-  <button [disabled]="username == ''" class="bnt btn-primary" (click)="onResetUN()">Click</button>
+  <p *ngIf="username == 'bacon'; else noBacon" [ngStyle]="{ backgroundColor: getStatus() }">
+    You guessed the correct password!
+  </p>
+  <ng-template #noBacon>That's the wrong password!</ng-template>
+  <button [disabled]="username == ''" class="bnt btn-primary" (click)="onResetUN()">Click for prize</button>
+</section>
+
+<section class="container-fluid">
+  <input [(ngModel)]="serverName" type="text" />
+  <button class="btn btn-primary" (click)="addServer()">Add List Item</button>
+  <ul *ngFor="let server of servers">
+    <li>{{ server }}</li>
+  </ul>
+</section>
+
+<section class="container-fluid">
+  <button (click)="!showParagraph" class="btn btn-primary">Show Paragraph</button>
+  <p [ngStyle]="showParagraph ? 'display: block' : 'display: none'">Secret!</p>
 </section>

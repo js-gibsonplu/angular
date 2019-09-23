@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServerComponent implements OnInit {
   username = '';
+  serverName = '';
+  servers = ['four', 'five', 'six'];
+  showParagraph = false;
 
   constructor() {}
 
@@ -19,6 +22,10 @@ export class ServerComponent implements OnInit {
   }
 
   getStatus() {
-    return this.username === 'bacon' ? 'brown' : '';
+    return this.username === 'bacon' ? 'lightblue' : '';
+  }
+
+  addServer() {
+    this.servers.push(this.serverName)
   }
 }
