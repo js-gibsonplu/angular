@@ -10,6 +10,7 @@ export class ServerComponent implements OnInit {
   serverName = '';
   servers = ['four', 'five', 'six'];
   showParagraph = false;
+  buttonClicks: Array<any> = [];
 
   constructor() {}
 
@@ -27,5 +28,12 @@ export class ServerComponent implements OnInit {
 
   addServer() {
     this.servers.push(this.serverName)
+  }
+
+  changeParagraphState(event) {
+    this.buttonClicks.push(event)
+    console.log(this.buttonClicks)
+    console.log(this.showParagraph)
+    this.showParagraph = !this.showParagraph;
   }
 }

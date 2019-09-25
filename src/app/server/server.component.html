@@ -18,6 +18,7 @@
 </section>
 
 <section class="container-fluid">
-  <button (click)="!showParagraph" class="btn btn-primary">Show Paragraph</button>
-  <p [ngStyle]="showParagraph ? 'display: block' : 'display: none'">Secret!</p>
+  <button (click)="changeParagraphState($event)" class="btn btn-primary">Show Paragraph</button>
+  <p *ngIf="showParagraph ? 'display:block' : '' ">Secret!</p>
+  <div *ngFor='let click of buttonClicks'>Here are the button events: {{click}} + {{buttonClicks}}</div>
 </section>
