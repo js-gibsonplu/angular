@@ -6,22 +6,26 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./game-control.component.css']
 })
 export class GameControlComponent implements OnInit {
-  @Output() myNum = 0;
-  @Output() gameStarted = new EventEmitter<any>();
+  @Output() gameStarted = new EventEmitter<number>();
+  myNum = 0;
+  gameTimer;
+  @Output() gameStopped = new EventEmitter<any>();
 
   constructor() {}
 
   ngOnInit() {}
 
-  onGameStart(data) {
-    const gameTimer = setInterval(() => {
+  onGameStart() {
+    this.gameTimer = setInterval(() => {
       this.gameStarted.emit(this.myNum);
       this.myNum++;
-      console.log(this.myNum);
+      // console.log(this.myNum);
     }, 1000);
   }
-  // TODO this needs work to stop the interval - this current config doesn't work
-  onGameStop(func) {
-    clearInterval(func.gameTimer);
+
+  onGameStop() {
+    this.gameStopped.emit(this.myNum);
+    clearInterval(this.gameTimer);
+    console.log('Game Stopped', this.myNum);
   }
 }
